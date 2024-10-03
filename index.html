@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouvrir un PDF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ouvrir votre fichier PDF</h1>
+        <select id="file-select">
+            <option value="">Sélectionnez un fichier PDF</option>
+            <option value="certification1.pdf">Certification 1</option>
+            <option value="certification2.pdf">Certification 2</option>
+            <option value="certification3.pdf">Certification 3</option>
+            <option value="certification4.pdf">Certification 4</option>
+            <option value="certification5.pdf">Certification 5</option>
+        </select>
+        <button id="open-pdf" class="hidden">Ouvrir le PDF</button>
+    </div>
+    <script>
+        const fileSelect = document.getElementById('file-select');
+        const openPdfButton = document.getElementById('open-pdf');
+
+        openPdfButton.addEventListener('click', () => {
+            const selectedFile = fileSelect.value;
+            if (selectedFile) {
+                window.open(selectedFile, '_blank'); // Ouvrir le PDF dans un nouvel onglet
+            } else {
+                alert('Veuillez sélectionner un fichier PDF valide.');
+            }
+        });
+
+        fileSelect.addEventListener('change', () => {
+            openPdfButton.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
