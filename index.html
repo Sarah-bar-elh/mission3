@@ -18,8 +18,16 @@
             <option value="certification5.pdf">Certification 5</option>
         </select>
         <button id="open-pdf" class="hidden">Ouvrir le PDF</button>
-    </div>
-    <script>
+    </div><br>
+    <center><button id="retour">Retour</button></center>
+
+<!-- JavaScript placé à la fin du fichier -->
+<script>
+    document.getElementById("retour").addEventListener("click", function(event) {
+        event.preventDefault(); // Empêche les comportements indésirables
+        window.location.href = "https://sarah-bar-elh.github.io/newbst_sio/mission.html"; // Redirige vers la page voulue
+    });
+
         const fileSelect = document.getElementById('file-select');
         const openPdfButton = document.getElementById('open-pdf');
 
